@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="dist/css/style.css">
 
 </head>
-<body>
+<body class="mostrar-contato">
 
 <div class="container">
   <header id="cabecalho" class="row">
@@ -30,22 +30,23 @@
         <label for="nome">Nome</label>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="nome" class="form-control" id="nome" placeholder="Nome">
+            <input type="nome" class="form-control" id="nome" placeholder="Nome" name="nome" required>
           </div>
       </div>
       <div class="form-group">
         <label for="email">E-mail</label>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input type="email" class="form-control" id="email" placeholder="E-mail">
+            <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" required>
           </div>
       </div>
       <div class="form-group">
         <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Mensagem" rows="11"></textarea>
+        <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Mensagem" rows="9"  required></textarea>
       </div>
       <div class="form-group">
-        <input type="submit" name="acao" value="Enviar" class="btn btn-primary pull-right">
+        <input type="submit" name="acao" id="botaoEnviar" value="Enviar" class="btn btn-primary pull-right">
+        <input type="button" name="acao" id="botaoCancelar" value="Cancelar" class="btn btn-primary pull-right">
       </div>
     </form>
   </section>
@@ -53,39 +54,9 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-
-function atualizarPosicaoDoLogo() {
-  if (window.contatoFormTimer) {
-    clearInterval(window.contatoFormTimer);
-  }
-
-  var logoContainer = $(".logo-container");
-  var contatoFormulario = $("#contato-formulario");
-
-  if($("body").hasClass('mostrar-contato')) {
-    logoContainer
-      .removeClass('col-xs-offset-4')
-      .addClass('col-xs-offset-1');
-    window.contatoFormTimer = setTimeout(function() {
-        contatoFormulario.show()
-    }, 500);
-  } else {
-    logoContainer
-      .addClass('col-xs-offset-4')
-      .removeClass('col-xs-offset-1');
-      contatoFormulario.hide();
-  }
-}
-$("#lingueta").on("click mousedown", function(event){
-  if(event.type == "click") {
-    $("body").toggleClass('mostrar-contato');
-    atualizarPosicaoDoLogo();
-  } else if(event.type == "mousedown") {
-    event.preventDefault();
-  }
-});
-atualizarPosicaoDoLogo();
-</script>
+<script src="bower_components/bootstrap-validator/dist/validator.min.js"></script>
+<script src="bower_components/SSP-simple-singleton-pattern/SSP.js"></script>
+<script src="source/js/SSP.Site.js"></script>
+<script>SSP.init();</script>
 </body>
 </html>
