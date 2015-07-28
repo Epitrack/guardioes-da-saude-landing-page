@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Guardiões da Saúde 2</title>
+  <title>Guardiões da Saúde</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="dist/css/style.css">
@@ -12,17 +12,80 @@
 
 <div class="container">
   <header id="cabecalho" class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-4 col-xs-offset-4 transition">
       <h1>Guardiões da Saúde</h1>
       <div id="lingueta">
         <h2>Em breve.</h2>
-        <p>Entre em contato</p>
+        <p><span class="entre-em">Entre em </span><span class="contato">contato</span></p>
       </div>
     </div>
   </header>
+  <section class="row">
+    <div class="col-xs-4 col-xs-offset-4 transition logo-container">
+      <img id="logo" src="source/images/logo.png" alt="">
+    </div>
+
+    <form id="contato-formulario" action="contato.php" method="post" class="col-xs-5">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="nome" class="form-control" id="nome" placeholder="Nome">
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input type="email" class="form-control" id="email" placeholder="E-mail">
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Mensagem" rows="11"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" name="acao" value="Enviar" class="btn btn-primary pull-right">
+      </div>
+    </form>
+  </section>
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+
+function atualizarPosicaoDoLogo() {
+  if (window.contatoFormTimer) {
+    clearInterval(window.contatoFormTimer);
+  }
+
+  var logoContainer = $(".logo-container");
+  var contatoFormulario = $("#contato-formulario");
+
+  if($("body").hasClass('mostrar-contato')) {
+    logoContainer
+      .removeClass('col-xs-offset-4')
+      .addClass('col-xs-offset-1');
+    window.contatoFormTimer = setTimeout(function() {
+        contatoFormulario.show()
+    }, 500);
+  } else {
+    logoContainer
+      .addClass('col-xs-offset-4')
+      .removeClass('col-xs-offset-1');
+      contatoFormulario.hide();
+  }
+}
+$("#lingueta").on("click mousedown", function(event){
+  if(event.type == "click") {
+    $("body").toggleClass('mostrar-contato');
+    atualizarPosicaoDoLogo();
+  } else if(event.type == "mousedown") {
+    event.preventDefault();
+  }
+});
+atualizarPosicaoDoLogo();
+</script>
 </body>
 </html>

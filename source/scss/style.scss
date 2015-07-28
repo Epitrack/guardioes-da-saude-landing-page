@@ -1,8 +1,22 @@
 @import "_fonts.scss";
+html{
+ height:100%;
+ min-height:100%;
 
-body {
-  background-image: url("../../source/images/background.png");
-  background-size: cover;
+  body{
+    min-height:100%;
+    background-image: url(../../source/images/background.png);
+    background-size: cover;
+  }
+}
+
+
+form label {
+  color: #FFFFFF;
+}
+
+.transition {
+  transition: 500ms all;
 }
 
 
@@ -20,18 +34,58 @@ body {
     text-align: center;
     margin: 0 auto;
     color: #1976D2;
+    cursor: pointer;
 
-    h2 {
-      font-family: 'focobold';
-      font-size: 48px;
-    }
-
-    p{
-      font-size: 18px;
+    .mostrar-contato & {
+        background-image: url("../../source/images/hexa-contacts-blue.png");
+        color: #FFFFFF;
     }
 
     h2, p {
       margin: 0;
     }
+
+    h2, .mostrar-contato & p {
+      font-family: 'focobold';
+      font-size: 48px;
+      padding-top: 10px;
+
+      .mostrar-contato & {
+        display: none;
+      }
+    }
+
+    &:hover p {
+      text-decoration: none;
+    }
+
+    p{
+      font-family: 'focoregular';
+      text-decoration: underline;
+      font-size: 18px;
+
+
+      .mostrar-contato & {
+        text-decoration: none;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+      .mostrar-contato & .entre-em {
+        display: none;
+      }
+    }
+
+
   }
+}
+
+
+#logo {
+  margin: 0 auto;
+  display: block;
+}
+
+#contato-formulario {
+  display: none;
 }

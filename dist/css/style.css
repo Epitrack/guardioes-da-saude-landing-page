@@ -82,9 +82,19 @@
   font-weight: normal;
   font-style: normal; }
 
-body {
-  background-image: url("../../source/images/background.png");
-  background-size: cover; }
+html {
+  height: 100%;
+  min-height: 100%; }
+  html body {
+    min-height: 100%;
+    background-image: url(../../source/images/background.png);
+    background-size: cover; }
+
+form label {
+  color: #FFFFFF; }
+
+.transition {
+  transition: 500ms all; }
 
 #cabecalho h1 {
   display: none; }
@@ -95,11 +105,35 @@ body {
   height: 158px;
   text-align: center;
   margin: 0 auto;
-  color: #1976D2; }
-  #cabecalho #lingueta h2 {
-    font-family: 'focobold';
-    font-size: 48px; }
-  #cabecalho #lingueta p {
-    font-size: 18px; }
+  color: #1976D2;
+  cursor: pointer; }
+  .mostrar-contato #cabecalho #lingueta {
+    background-image: url("../../source/images/hexa-contacts-blue.png");
+    color: #FFFFFF; }
   #cabecalho #lingueta h2, #cabecalho #lingueta p {
     margin: 0; }
+  #cabecalho #lingueta h2, .mostrar-contato #cabecalho #lingueta p {
+    font-family: 'focobold';
+    font-size: 48px;
+    padding-top: 10px; }
+    .mostrar-contato #cabecalho #lingueta h2, .mostrar-contato .mostrar-contato #cabecalho #lingueta p {
+      display: none; }
+  #cabecalho #lingueta:hover p {
+    text-decoration: none; }
+  #cabecalho #lingueta p {
+    font-family: 'focoregular';
+    text-decoration: underline;
+    font-size: 18px; }
+    .mostrar-contato #cabecalho #lingueta p {
+      text-decoration: none; }
+      .mostrar-contato #cabecalho #lingueta p::first-letter {
+        text-transform: uppercase; }
+    .mostrar-contato #cabecalho #lingueta p .entre-em {
+      display: none; }
+
+#logo {
+  margin: 0 auto;
+  display: block; }
+
+#contato-formulario {
+  display: none; }
