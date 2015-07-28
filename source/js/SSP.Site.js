@@ -130,6 +130,7 @@ SSP.Site = {
       enviado: function(data) {
         this.parent().desabilitar(false, "Enviar");
         this.parent()._form.get(0).reset();
+        this.parent()._form.find("textarea").val("A sua mensagem foi enviada. \nObrigado!");
         this._ajax = null;
       },
 
