@@ -136,6 +136,7 @@ form label {
   display: block; }
 
 #contato-formulario {
+  margin-top: 42px;
   display: none; }
   #contato-formulario #botaoCancelar {
     margin-right: 1em; }
