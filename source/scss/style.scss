@@ -1,0 +1,37 @@
+@import "_fonts.scss";
+
+body {
+  background-image: url("../../source/images/background.png");
+  background-size: cover;
+}
+
+
+#cabecalho {
+  h1 {
+    display: none;
+  }
+
+
+
+  #lingueta {
+    background-image: url("../../source/images/hexa-contacts-white.png");
+    width: 286px;
+    height: 158px;
+    text-align: center;
+    margin: 0 auto;
+    color: #1976D2;
+
+    h2 {
+      font-family: 'focobold';
+      font-size: 48px;
+    }
+
+    p{
+      font-size: 18px;
+    }
+
+    h2, p {
+      margin: 0;
+    }
+  }
+}

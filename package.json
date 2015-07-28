@@ -1,0 +1,24 @@
+{
+  "name": "guardioes-da-saude",
+  "version": "1.0.0",
+  "description": "- 1st commit - 2nd commit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://denniscalazans@github.com/Epitrack/guardioes-da-saude.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Epitrack/guardioes-da-saude/issues"
+  },
+  "homepage": "https://github.com/Epitrack/guardioes-da-saude#readme",
+  "devDependencies": {
+    "browser-sync": "^2.8.0",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
