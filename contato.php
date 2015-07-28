@@ -1,8 +1,15 @@
 <?php
+header("Content-type: application/json; charset=utf-8");
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$mensagem = $_POST['mensagem'];
 
-header("Content-type: text/plain; charset=utf-8");
-sleep(3);
+$resultado = mail(
+"denniscalazans+gds@gmail.com",
+"GDS - Contato do Site",
+$mensagem,
+"From: $nome <$email>"
+);
 
-print_r($_POST);
-
+echo json_encode(array("status"=>$resultado));
 ?>
