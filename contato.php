@@ -5,8 +5,8 @@ $email = $_POST['email'];
 $mensagem = $_POST['mensagem'];
 
 $resultado = mail(
-"denniscalazans+gds@gmail.com",
-"GDS - Contato do Site",
+"contato@epitrack.com.br",
+"Guardiões da Saúde - Contato do Site",
 $mensagem,
 "From: $nome <$email>"
 );
